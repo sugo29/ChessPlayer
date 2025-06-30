@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: chess-player
+    env: java
+    buildCommand: mvn clean package -DskipTests
+    startCommand: java -jar target/chess-player-1.0.0.jar
+    plan: free
+    envVars:
+      - key: JAVA_TOOL_OPTIONS
+        value: -XX:MaxRAMPercentage=75.0
